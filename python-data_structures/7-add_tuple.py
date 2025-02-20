@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 def add_tuple(tuple_a=(), tuple_b=()):
     # Ensure the tuples are at least 2 elements long by padding with 0 if necessary
     a1 = tuple_a[0] if len(tuple_a) > 0 else 0
