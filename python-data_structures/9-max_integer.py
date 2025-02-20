@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 def max_integer(my_list=[]):
     # Return None if the list is empty
     if not my_list:
