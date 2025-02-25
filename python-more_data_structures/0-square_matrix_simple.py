@@ -12,4 +12,3 @@ def square_matrix_simple(matrix=[]):
         list of lists: A new matrix with each value squared.
     """
     return [[num**2 for num in row] for row in matrix]
-
