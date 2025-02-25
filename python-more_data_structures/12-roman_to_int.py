@@ -20,8 +20,7 @@ def roman_to_int(roman_string):
     for char in reversed(roman_string):  # Iterate from right to left
         value = roman_values.get(char, 0)  # Get the value or default to 0
         if value < prev_value:
-            total -= value 
-# Subtract if a smaller numeral is before a larger one
+            total -= value  # Subtract if smaller numeral precedes larger 1
         else:
             total += value  # Otherwise, add it
         prev_value = value  # Update previous value
