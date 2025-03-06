@@ -3,7 +3,7 @@ import sys
 
 
 def is_safe(board, row, col, N):
-    # Check the column
+    # Check the column, and diagonals
     for i in range(row):
         if board[i] == col or \
            board[i] - i == col - row or \
@@ -15,10 +15,7 @@ def is_safe(board, row, col, N):
 def solve_nqueens(board, row, N):
     if row == N:
         # Print the solution
-        for i in range(N):
-            line = ['.' for _ in range(N)]
-            line[board[i]] = 'Q'
-            print("".join(line))
+        print(" ".join(str(board[i] + 1) for i in range(N)))
         return True
 
     solution_found = False
