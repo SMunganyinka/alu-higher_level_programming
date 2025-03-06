@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 This module defines a class called Square, which represents a square.
 
