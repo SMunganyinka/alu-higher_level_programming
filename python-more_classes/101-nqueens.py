@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 import sys
 
-
 def is_safe(board, row, col, N):
-    # Check the column, and diagonals
+    # Check if it's safe to place a queen at (row, col)
     for i in range(row):
         if board[i] == col or \
            board[i] - i == col - row or \
@@ -11,10 +10,9 @@ def is_safe(board, row, col, N):
             return False
     return True
 
-
 def solve_nqueens(board, row, N):
     if row == N:
-        # Print the solution
+        # Print the solution in the required format
         print(" ".join(str(board[i] + 1) for i in range(N)))
         return True
 
@@ -25,7 +23,6 @@ def solve_nqueens(board, row, N):
             solution_found |= solve_nqueens(board, row + 1, N)
     return solution_found
 
-
 def nqueens(N):
     if not isinstance(N, int):
         print("N must be a number")
@@ -35,10 +32,11 @@ def nqueens(N):
         sys.exit(1)
 
     board = [-1] * N  # Initialize the board
-    if not solve_nqueens(board, 0, N):
+    solutions_count = 0
+    solutions_count += solve_nqueens(board, 0, N)
+    if solutions_count == 0:
         print("No solution")
         sys.exit(1)
-
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
