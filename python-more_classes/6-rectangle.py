@@ -1,15 +1,15 @@
 #!/usr/bin/python3
 """
-This module defines a Rectangle class.
+This module defines a Rectangle class with attributes and methods.
 
 Features:
 - Private attributes `width` and `height` with validation.
 - Class attributes:
-  - `number_of_instances`: Tracks instances.
-  - `print_symbol`: Used for printing.
+  - `number_of_instances`: Tracks instance count.
+  - `print_symbol`: Symbol used for printing.
 - Methods:
-  - `area()`: Returns the area.
-  - `perimeter()`: Returns the perimeter.
+  - `area()`: Returns the rectangle's area.
+  - `perimeter()`: Returns the rectangle's perimeter.
   - `__str__()`: Returns a string representation.
   - `__repr__()`: Returns a recreation string.
   - `__del__()`: Prints a message when deleted.
@@ -21,7 +21,7 @@ class Rectangle:
     Represents a rectangle.
 
     Attributes:
-        number_of_instances (int): Tracks instance count.
+        number_of_instances (int): Tracks the number of instances.
         print_symbol (any): Symbol used for string representation.
     """
 
@@ -42,13 +42,13 @@ class Rectangle:
 
     @property
     def width(self):
-        """Get width."""
+        """Get the width."""
         return self.__width
 
     @width.setter
     def width(self, value):
         """
-        Set width.
+        Set the width.
 
         Args:
             value (int): The width.
@@ -65,13 +65,13 @@ class Rectangle:
 
     @property
     def height(self):
-        """Get height."""
+        """Get the height."""
         return self.__height
 
     @height.setter
     def height(self, value):
         """
-        Set height.
+        Set the height.
 
         Args:
             value (int): The height.
@@ -87,12 +87,12 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """Return area."""
+        """Return the area of the rectangle."""
         return self.__width * self.__height
 
     def perimeter(self):
         """
-        Return perimeter.
+        Return the perimeter.
 
         If width or height is 0, return 0.
         """
@@ -102,7 +102,7 @@ class Rectangle:
 
     def __str__(self):
         """
-        Return string representation.
+        Return a string representation of the rectangle.
 
         Uses `print_symbol` for display.
         Returns an empty string if width or height is 0.
@@ -115,16 +115,10 @@ class Rectangle:
         )
 
     def __repr__(self):
-        """
-        Return recreation string.
-        """
-        return (
-            f"Rectangle({self.__width}, {self.__height})"
-        )
+        """Return a string that recreates the instance."""
+        return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
-        """
-        Print message and decrement count when deleted.
-        """
+        """Print message and decrement instance count when deleted."""
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
