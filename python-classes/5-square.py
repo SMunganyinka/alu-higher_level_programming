@@ -28,7 +28,7 @@ class Square:
 
         Args:
             size (int): The size of the square. Default is 0.
-        
+
         Raises:
             TypeError: If size is not an integer.
             ValueError: If size is less than 0.
@@ -62,7 +62,7 @@ class Square:
         if value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value  # Private attribute assignment
-    
+
     def area(self):
         """
         Returns the area of the square.
@@ -75,7 +75,7 @@ class Square:
     def my_print(self):
         """
         Prints the square in stdout using the '#' character.
-        
+
         If size is 0, print an empty line.
         """
         if self.__size == 0:
