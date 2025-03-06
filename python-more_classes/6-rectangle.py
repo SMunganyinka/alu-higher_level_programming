@@ -5,14 +5,14 @@ This module defines a Rectangle class to represent a rectangle.
 Features:
 - Private attributes `width` and `height` with validation.
 - Class attributes:
-    - `number_of_instances`: Tracks the number of instances.
-    - `print_symbol`: Used to print the rectangle.
+  - `number_of_instances`: Tracks the number of instances.
+  - `print_symbol`: Used to print the rectangle.
 - Methods:
-    - `area()`: Returns the area.
-    - `perimeter()`: Returns the perimeter.
-    - `__str__()`: Returns a string representation.
-    - `__repr__()`: Returns a recreation string.
-    - `__del__()`: Prints a message when deleted.
+  - `area()`: Returns the area.
+  - `perimeter()`: Returns the perimeter.
+  - `__str__()`: Returns a string representation.
+  - `__repr__()`: Returns a recreation string.
+  - `__del__()`: Prints a message when deleted.
 """
 
 
@@ -110,14 +110,21 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
         return "\n".join(
-            [str(self.print_symbol) * self.__width] * self.__height
+            [str(self.print_symbol) * self.__width]
+            * self.__height
         )
 
     def __repr__(self):
-        """Return a string that recreates the instance."""
-        return f"Rectangle({self.__width}, {self.__height})"
+        """
+        Return a string that recreates the instance.
+        """
+        return (
+            f"Rectangle({self.__width}, {self.__height})"
+        )
 
     def __del__(self):
-        """Print message and decrement instance count when deleted."""
+        """
+        Print message and decrement instance count when deleted.
+        """
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
