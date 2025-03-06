@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 """
 This module defines a Rectangle class to represent a rectangle with the
 following functionalities:
@@ -114,8 +113,7 @@ class Rectangle:
         Calculate the perimeter of the rectangle.
 
         Returns:
-            int: The perimeter of the rectangle.
-                 Returns 0 if width or height is 0.
+            int: The perimeter of the rectangle. Returns 0 if width or height is 0.
         """
         if self.__width == 0 or self.__height == 0:
             return 0
@@ -126,32 +124,25 @@ class Rectangle:
         Return a string representation of the rectangle.
 
         Returns:
-            str: The rectangle represented by the character(s)
-                 in print_symbol.
+            str: The rectangle represented by the character(s) in print_symbol.
             An empty string if the width or height is 0.
         """
         if self.__width == 0 or self.__height == 0:
             return ""
-        return "\n".join(
-            [str(self.print_symbol) * self.__width] * self.__height
-        )
+        return "\n".join([str(self.print_symbol) * self.__width] * self.__height)
 
     def __repr__(self):
         """
         Return a string that can be used to recreate the rectangle.
 
         Returns:
-            str: The string representation of the rectangle
-                 for eval().
+            str: The string representation of the rectangle for eval().
         """
-        return (
-            f"Rectangle({self.__width}, {self.__height})"
-        )
+        return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
         """
-        Print a message when an instance is deleted and decrement
-        the instance count.
+        Print a message when an instance is deleted and decrement the instance count.
 
         Outputs:
             Bye rectangle...
