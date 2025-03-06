@@ -1,4 +1,18 @@
 #!/usr/bin/python3
+"""
+This module defines a class Square that represents a square.
+
+The class has the following methods:
+- __init__(size=0): Initializes a square with the given size.
+- size: Property to get the size of the square.
+- size.setter: Setter to set the size, with validation for integer type and non-negative values.
+- area(): Method to calculate and return the area of the square.
+- my_print(): Method to print the square using the '#' character.
+
+The square's size can be optionally set during initialization. If no size
+is provided, the default value is 0.
+"""
+
 class Square:
     """
     A class that defines a square by its size.
