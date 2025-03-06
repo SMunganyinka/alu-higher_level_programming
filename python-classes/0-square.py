@@ -1,13 +1,11 @@
 #!/usr/bin/python3
+"""
+This module defines an empty class Square.
+"""
+
+
 class Square:
     """
-    A class that defines a square.
-
-    Attributes:
-        dict_: A dictionary to represent the square.
+    An empty class that defines a square.
     """
-    def __init__(self):
-        """
-        Initializes the square with an empty dictionary.
-        """
-        self.dict_ = {}
+    pass
