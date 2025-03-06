@@ -14,6 +14,7 @@ Additionally, the class includes a public method `area()` to calculate
 and return the area of the square.
 """
 
+
 class Square:
     """
     A class that defines a square by its size.
