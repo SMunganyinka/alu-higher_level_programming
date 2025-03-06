@@ -19,6 +19,7 @@ The square's size and position can be optionally set during initialization.
 If no size or position is provided, the default values are 0 and (0, 0).
 """
 
+
 class Square:
     """
     A class that defines a square by its size and position.
