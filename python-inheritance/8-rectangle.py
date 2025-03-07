@@ -2,7 +2,7 @@
 """
 Rectangle module.
 
-This module defines a Rectangle class that inherits from the BaseGeometry class. 
+This module defines a Rectangle class which inherits from the BaseGeometry class. 
 It ensures that both the width and height of the rectangle are positive integers 
 and validates them using the integer_validator method from the BaseGeometry class.
 """
