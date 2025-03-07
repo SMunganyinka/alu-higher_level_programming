@@ -1,30 +1,51 @@
-# Import BaseGeometry class
->>> from 7-base_geometry import BaseGeometry
+>>> BaseGeo = __import__('7-base_geometry').BaseGeometry
 
-# Test case for area() method
->>> bg = BaseGeometry()
->>> bg.area()
+>>> base = BaseGeo()
+
+>>> base.area()
 Traceback (most recent call last):
-    ...
 Exception: area() is not implemented
 
-# Test case for integer_validator() with a valid integer
->>> bg.integer_validator("size", 10)
-
-# Test case for integer_validator() with a non-integer value
->>> bg.integer_validator("size", "10")
+>>> base.integer_validator()
 Traceback (most recent call last):
-    ...
-TypeError: size must be an integer
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
-# Test case for integer_validator() with zero
->>> bg.integer_validator("size", 0)
+>>> base.integer_validator("age")
 Traceback (most recent call last):
-    ...
-ValueError: size must be greater than 0
+TypeError: integer_validator() missing 1 required positional argument: 'value'
 
-# Test case for integer_validator() with a negative integer
->>> bg.integer_validator("size", -5)
+>>> base.integer_validator("age", (4,))
 Traceback (most recent call last):
-    ...
-ValueError: size must be greater than 0
+TypeError: age must be an integer
+
+>>> base.integer_validator("my_int", 12)
+
+>>> base.integer_validator("width", 89)
+
+>>> base.integer_validator("name", "John")
+Traceback (most recent call last):
+TypeError: name must be an integer
+
+>>> base.integer_validator("age", 0)
+Traceback (most recent call last):
+ValueError: age must be greater than 0
+
+>>> base.integer_validator("distance", -4)
+Traceback (most recent call last):
+ValueError: distance must be greater than 0
+
+>>> base.integer_validator("age", [3])
+Traceback (most recent call last):
+TypeError: age must be an integer
+
+>>> base.integer_validator("age", True)
+Traceback (most recent call last):
+TypeError: age must be an integer
+
+>>> base.integer_validator("age", {3, 4})
+Traceback (most recent call last):
+TypeError: age must be an integer
+
+>>> base.integer_validator("age", None)
+Traceback (most recent call last):
+TypeError: age must be an integer
