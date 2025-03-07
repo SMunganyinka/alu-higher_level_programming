@@ -7,8 +7,6 @@ It ensures that both the width and height of the rectangle are positive integers
 and validates them using the integer_validator method from the BaseGeometry class.
 """
 
-from base_geometry import BaseGeometry
-
 class Rectangle(BaseGeometry):
     """A class representing a rectangle that inherits from BaseGeometry."""
     
