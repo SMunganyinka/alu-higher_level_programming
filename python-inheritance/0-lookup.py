@@ -7,6 +7,7 @@ The function is useful for introspection, allowing users to inspect an object's
 attributes and methods without importing any external modules.
 """
 
+
 def lookup(obj):
     """
     Returns a list of available attributes and methods of an object.
