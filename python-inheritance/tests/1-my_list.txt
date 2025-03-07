@@ -1,3 +1,5 @@
+>>> from 1-my_list import MyList
+
 # Creating a MyList instance and adding elements
 >>> my_list = MyList()
 >>> my_list.append(1)
