@@ -2,7 +2,7 @@
 """
 Module for converting an object to its JSON string representation.
 
-This module provides a function to serialize a Python object into a 
+This module provides a function to serialize a Python object into a
 JSON-formatted string using the `json.dumps()` method.
 """
 
