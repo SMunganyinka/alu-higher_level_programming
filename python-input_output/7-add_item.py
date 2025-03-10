@@ -2,6 +2,11 @@
 """
 Script that adds all command-line arguments to a Python list
 and saves them to a file in JSON format.
+
+This script first loads an existing list from a file named `add_item.json`
+(if the file exists). It then appends all command-line arguments (excluding
+the script name) to the list, and saves the updated list back to the same file.
+If the file doesn't exist, it will create one and start with an empty list.
 """
 
 import sys
