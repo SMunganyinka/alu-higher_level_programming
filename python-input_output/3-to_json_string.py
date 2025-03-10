@@ -2,9 +2,11 @@
 """
 Module for converting an object to its JSON string representation.
 
-This module provides a function to serialize an object into a JSON-formatted
-string.
+This module provides a function to serialize a Python object into a 
+JSON-formatted string using the `json.dumps()` method.
 """
+
+import json
 
 
 def to_json_string(my_obj):
@@ -17,4 +19,4 @@ def to_json_string(my_obj):
     Returns:
         str: The JSON string representation of the object.
     """
-    return str(my_obj).replace("'", '"')  # This is a simple workaround.
+    return json.dumps(my_obj)
