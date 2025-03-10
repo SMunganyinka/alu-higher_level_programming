@@ -1,16 +1,17 @@
 #!/usr/bin/python3
+#!/usr/bin/python3
 """
 Script that adds all command-line arguments to a Python list
 and saves them to a file in JSON format.
 
-This script will:
+The script will:
 1. Check if a file named 'add_item.json' exists.
 2. If the file exists, load its contents into a Python list.
 3. If the file does not exist, initialize an empty list.
 4. Append all command-line arguments (excluding the script name) to the list.
 5. Save the updated list back to 'add_item.json' as a JSON representation.
 
-The file is created if it doesn't exist, and its content is updated if it already exists.
+The file will be created if it doesn't exist, and its content will be updated if it already exists.
 """
 
 import sys
@@ -24,11 +25,11 @@ def add_arguments_to_json_file():
     Adds all command-line arguments to a Python list and saves them to a file.
 
     This function performs the following steps:
-    - Checks if the file `add_item.json` exists.
-    - If the file exists, loads its current contents into a list.
-    - If the file doesn't exist, initializes an empty list.
-    - Appends all command-line arguments (except the script name) to the list.
-    - Saves the updated list back to the file `add_item.json` as a JSON representation.
+    1. Checks if the file `add_item.json` exists.
+    2. If the file exists, it loads its current contents into a list.
+    3. If the file doesn't exist, it initializes an empty list.
+    4. Appends all command-line arguments (except the script name) to the list.
+    5. Saves the updated list back to the file `add_item.json` as a JSON representation.
     """
     filename = "add_item.json"
 
@@ -48,5 +49,8 @@ def add_arguments_to_json_file():
 
 
 if __name__ == "__main__":
-    # Call the function to add arguments to the file
+    """
+    This is the entry point of the script. It calls the function to add command-line arguments
+    to the list and save them to the JSON file.
+    """
     add_arguments_to_json_file()
