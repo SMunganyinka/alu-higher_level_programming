@@ -1,16 +1,13 @@
 #!/usr/bin/python3
 """
-Script that adds all command-line arguments to a Python list and saves them to a file
-in JSON format.
+Script that adds all command-line arguments to a Python list and saves them to a file.
 
-This script does the following:
-1. Checks if a file named 'add_item.json' exists.
-2. If the file exists, loads its contents into a Python list.
-3. If the file does not exist, initializes an empty list.
+The script performs the following steps:
+1. Checks if the file 'add_item.json' exists.
+2. If the file exists, loads its current contents into a list.
+3. If the file doesn't exist, initializes an empty list.
 4. Appends all command-line arguments (excluding the script name) to the list.
 5. Saves the updated list back to 'add_item.json' as a JSON representation.
-
-The file is created if it doesn't exist, and its content is updated if it already exists.
 """
 
 import sys
@@ -23,12 +20,10 @@ def add_arguments_to_json_file():
     """
     Adds all command-line arguments to a Python list and saves them to a file.
 
-    This function performs the following steps:
-    1. Checks if the file 'add_item.json' exists.
-    2. If the file exists, loads its current contents into a list.
-    3. If the file doesn't exist, initializes an empty list.
-    4. Appends all command-line arguments (except the script name) to the list.
-    5. Saves the updated list back to the file 'add_item.json' as a JSON representation.
+    This function checks if the file 'add_item.json' exists. If it does, it loads
+    the current contents into a list. If not, it initializes an empty list. It then
+    appends all arguments (except the script name) to the list and saves the updated
+    list back to the file as a JSON representation.
     """
     filename = "add_item.json"
 
@@ -40,7 +35,7 @@ def add_arguments_to_json_file():
         # If the file doesn't exist, create an empty list
         my_list = []
 
-    # Extend the list with command-line arguments (excluding the script name)
+    # Add command-line arguments (excluding the script name)
     my_list.extend(sys.argv[1:])
 
     # Save the updated list back to the file as a JSON representation
@@ -49,9 +44,7 @@ def add_arguments_to_json_file():
 
 if __name__ == "__main__":
     """
-    The main entry point of the script.
-    
-    This section will execute the function to add command-line arguments
-    to the list and save them to the JSON file.
+    Main entry point for the script. Executes the function to add command-line
+    arguments to the list and save them to the JSON file.
     """
     add_arguments_to_json_file()
