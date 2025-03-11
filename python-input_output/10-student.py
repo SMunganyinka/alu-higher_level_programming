@@ -1,17 +1,17 @@
 #!/usr/bin/python3
-"""
-Module: student
-
-This module defines a Student class with public instance attributes
-and a method to retrieve its dictionary representation for JSON.
-
-Class:
-- Student: Defines a student with first name, last name, and age.
-"""
-
+#!/usr/bin/python3
+# 9-student.py
+# This module defines a `Student` class with first name, last name, and age.
+# It includes a method to return a dictionary representation of the Student instance.
+# The dictionary can contain all attributes or a subset specified by the user.
 
 class Student:
-    """Defines a student by first name, last name, and age."""
+    """A class that defines a student by their first name, last name, and age.
+
+    This class allows for the creation of student objects and provides a method
+    to retrieve a dictionary representation of a student instance. The dictionary
+    can either contain all attributes or a subset of attributes specified by the user.
+    """
 
     def __init__(self, first_name, last_name, age):
         """Initialize a new Student instance.
@@ -28,17 +28,18 @@ class Student:
     def to_json(self, attrs=None):
         """Retrieve a dictionary representation of the Student instance.
 
-        If attrs is a list of strings, only attribute names contained in this
-        list must be retrieved. Otherwise, all attributes must be retrieved.
+        If the attrs argument is provided as a list of strings, only the attributes
+        in that list will be included in the returned dictionary. If attrs is None
+        or invalid, all attributes of the student instance will be returned.
 
         Args:
             attrs (list, optional): A list of attribute names to retrieve.
+                                    Defaults to None.
 
         Returns:
-            dict: Dictionary representation of the Student instance.
+            dict: A dictionary representation of the student, containing the specified
+                  attributes or all attributes.
         """
         if isinstance(attrs, list) and all(isinstance(attr, str) for attr in attrs):
-            return {
-                key: getattr(self, key) for key in attrs if hasattr(self, key)
-            }
+            return {key: getattr(self, key) for key in attrs if hasattr(self, key)}
         return self.__dict__
