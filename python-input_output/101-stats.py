@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""This module is documented"""
 import sys
 from collections import defaultdict
 
