@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """
 9-student.py
-Defines a `Student` class with first name, last name, and age. 
-Includes a method `to_json` that returns a dictionary representation of the 
-student. The dictionary can contain all attributes or a subset specified 
+Defines a `Student` class with first name, last name, and age.
+Includes a method `to_json` that returns a dictionary representation of the
+student. The dictionary can contain all attributes or a subset specified
 by the user.
 """
 
