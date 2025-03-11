@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """
 10-student.py
-Defines a `Student` class with first name, last name, and age. Includes methods
-to serialize (`to_json`) and deserialize (`reload_from_json`) the student instance.
+Defines a `Student` class with first name, last name, and age. Includes
+methods to serialize (`to_json`) and deserialize (`reload_from_json`) the
+student instance.
 """
 
 
@@ -41,7 +42,7 @@ class Student:
         return self.__dict__
 
     def reload_from_json(self, json):
-        """Replace all attributes of the student based on the provided dictionary.
+        """Replace all attributes of the student based on the provided dict.
 
         Args:
             json (dict): A dictionary with the new attribute values.
