@@ -1,17 +1,24 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
-# 9-student.py
-# This module defines a `Student` class with first name, last name, and age.
-# It includes a method to return a dictionary representation of the Student instance.
-# The dictionary can contain all attributes or a subset specified by the user.
+"""
+9-student.py
+This module defines a `Student` class that represents a student with first name,
+last name, and age. It includes a method `to_json` to return a dictionary representation
+of a Student instance. The dictionary can contain all attributes or a subset of attributes
+specified by the user.
+
+Attributes:
+    first_name (str): The student's first name.
+    last_name (str): The student's last name.
+    age (int): The student's age.
+
+Methods:
+    to_json(attrs=None): Retrieves a dictionary representation of the Student instance.
+                          If `attrs` is provided, only the specified attributes are included.
+"""
+
 
 class Student:
-    """A class that defines a student by their first name, last name, and age.
-
-    This class allows for the creation of student objects and provides a method
-    to retrieve a dictionary representation of a student instance. The dictionary
-    can either contain all attributes or a subset of attributes specified by the user.
-    """
+    """A class that defines a student by their first name, last name, and age."""
 
     def __init__(self, first_name, last_name, age):
         """Initialize a new Student instance.
@@ -33,7 +40,7 @@ class Student:
         or invalid, all attributes of the student instance will be returned.
 
         Args:
-            attrs (list, optional): A list of attribute names to retrieve.
+            attrs (list, optional): A list of attribute names to retrieve. 
                                     Defaults to None.
 
         Returns:
