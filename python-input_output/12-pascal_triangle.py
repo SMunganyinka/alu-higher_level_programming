@@ -5,6 +5,7 @@ Module: pascal_triangle
 This module defines a function to generate Pascal's Triangle up to the nth row.
 """
 
+
 def pascal_triangle(n):
     """
     Generate Pascal's Triangle up to the nth row.
