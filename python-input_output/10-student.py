@@ -3,7 +3,7 @@
 Module: student
 
 This module defines a Student class with public instance attributes
-and a method to retrieve its dictionary representation for JSON serialization.
+and a method to retrieve its dictionary representation for JSON.
 
 Class:
 - Student: Defines a student with first name, last name, and age.
