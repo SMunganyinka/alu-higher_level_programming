@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module is documented"""
+"""The module is documented"""
 import sys
 from collections import defaultdict
 
@@ -22,9 +22,9 @@ try:
     for line in sys.stdin:
         # Split the line into components
         parts = line.split()
-        
-        # Extract the status code and file size
-        if len(parts) >= 9:
+
+        # Ensure the line has enough parts before accessing parts[9] (file size) and parts[8] (status code)
+        if len(parts) >= 10:
             status_code = int(parts[8])
             file_size = int(parts[9])
             
