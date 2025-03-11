@@ -13,6 +13,7 @@ Usage:
     append_after("filename.txt", "target_string", "new_line\n")
 """
 
+
 def append_after(filename="", search_string="", new_string=""):
     """Inserts a line of text after each line containing a specific string."""
 
