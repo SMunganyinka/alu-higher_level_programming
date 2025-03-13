@@ -7,5 +7,5 @@ ALTER DATABASE hbtn_0c_0 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 -- Convert the table to utf8mb4
 ALTER TABLE first_table CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
--- Modify the 'name' column to use utf8mb4_unicode_ci collation
+-- Modify the 'name' column to have only utf8mb4_unicode_ci collation, without changing the charset
 ALTER TABLE first_table MODIFY name VARCHAR(256) COLLATE utf8mb4_unicode_ci;
