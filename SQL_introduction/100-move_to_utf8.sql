@@ -1,20 +1,12 @@
 -- Select the database
 USE hbtn_0c_0;
 
--- Convert the database to utf8mb4 (charset and collation)
+-- Convert the database and table to utf8mb4
 ALTER DATABASE hbtn_0c_0 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
--- Convert the table to utf8mb4 (charset and collation)
 ALTER TABLE first_table CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
--- Rename the current column (to remove explicit charset reference)
-ALTER TABLE first_table CHANGE name old_name VARCHAR(256);
+-- Temporarily rename the column to break MySQL’s stored charset reference
+ALTER TABLE first_table CHANGE name temp_name VARCHAR(256) COLLATE utf8mb4_unicode_ci;
 
--- Add a new 'name' column without specifying CHARACTER SET, only COLLATE
-ALTER TABLE first_table ADD name VARCHAR(256) COLLATE utf8mb4_unicode_ci AFTER id;
-
--- Copy data from old column to new column
-UPDATE first_table SET name = old_name;
-
--- Drop the old column
-ALTER TABLE first_table DROP COLUMN old_name;
+-- Rename it back to 'name' without defining CHARACTER SET
+ALTER TABLE first_table CHANGE temp_name name VARCHAR(256) COLLATE utf8mb4_unicode_ci;
