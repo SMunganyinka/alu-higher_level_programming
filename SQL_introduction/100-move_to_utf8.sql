@@ -1,12 +1,8 @@
--- Select the database
+-- Select the correct database
 USE hbtn_0c_0;
 
--- Drop the table if it exists (be careful, you will lose existing data)
-DROP TABLE IF EXISTS first_table;
+-- Modify the 'name' column to ensure it only has COLLATE without CHARACTER SET
+ALTER TABLE first_table MODIFY name VARCHAR(256) COLLATE utf8mb4_unicode_ci;
 
--- Recreate the table with the correct collation and charset
-CREATE TABLE first_table (
-    id INT DEFAULT NULL,
-    name VARCHAR(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-    score INT DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+-- Verify the structure of the table to check for the correct output
+SHOW CREATE TABLE first_table;
