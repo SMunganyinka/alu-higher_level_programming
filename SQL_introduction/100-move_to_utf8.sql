@@ -1,11 +1,11 @@
 -- Select the correct database
 USE hbtn_0c_0;
 
--- Convert the table to utf8mb4 if not already done
-ALTER TABLE first_table CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+-- Drop the 'name' column (this will remove the column but not the data)
+ALTER TABLE first_table DROP COLUMN name;
 
--- Modify the name column to only have the correct collation (removes CHARACTER SET utf8mb4)
-ALTER TABLE first_table MODIFY name VARCHAR(256) COLLATE utf8mb4_unicode_ci;
+-- Recreate the 'name' column with the correct collation and **no charset** definition
+ALTER TABLE first_table ADD COLUMN name VARCHAR(256) COLLATE utf8mb4_unicode_ci;
 
--- Verify the table structure to ensure everything is correct
+-- Check if the changes have been applied correctly
 SHOW CREATE TABLE first_table;
