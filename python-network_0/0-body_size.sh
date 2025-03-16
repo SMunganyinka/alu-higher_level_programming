@@ -1,18 +1,12 @@
 #!/bin/bash
 
-# Check if the URL is provided
-if [ -z "$1" ]; then
+url="$1"
+
+if [[ -z "$url" ]]; then
   echo "Usage: $0 <URL>"
   exit 1
 fi
 
-# Get the size of the response body using curl and Content-Length
-size=$(curl -sI "$1" | grep -i 'Content-Length' | awk '{print $2}')
+body_size=$(curl -s "$url" | wc -c)
 
-# Check if the size is available and display #
-if [ -n "$size" ]; then
-  printf '#%.0s' $(seq 1 "$size")
-  echo
-else
-  echo "Error: Could not retrieve Content-Length"
-fi
+echo "$body_size"
