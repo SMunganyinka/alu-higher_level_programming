@@ -1,14 +1,19 @@
 #!/bin/bash
 import os
 import py_compile
+import sys
 
 # Get the Python file name from the environment variable
 pyfile = os.getenv('PYFILE')
 
 # Check if the PYFILE environment variable is set
 if pyfile:
-    # Compile the Python file
-    py_compile.compile(pyfile, cfile=pyfile + 'c')
+    try:
+        # Compile the Python file
+        py_compile.compile(pyfile, cfile=pyfile + 'c')
+    except Exception as e:
+        sys.stderr.write(f"Compilation failed: {e}\n")
+        sys.exit(1)  # Exit with error if compilation fails
 else:
-    print("Error: PYFILE environment variable is not set.")
-    exit(1)
+    sys.stderr.write("Error: PYFILE environment variable is not set.\n")
+    sys.exit(1)  # Exit with error when PYFILE is missing
