@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import sys
 
 # Write the required text to stderr using sys.stderr.write
